@@ -5,20 +5,21 @@
 import random
 import string
 
-def generate_password(length, include_lowercase=True, include_uppercase=True, include_numbers=True, include_symbols=True):
-    characters = ''
+def gen_pas(length, include_uppercase=True, include_lowercase=True, include_numbers=True, include_symbols=True):
+    chr = ''
     if include_lowercase:
-        characters += string.ascii_lowercase
+        chr += string.ascii_lowercase
     if include_uppercase:
-        characters += string.ascii_uppercase
+        chr += string.ascii_uppercase
     if include_numbers:
-        characters += string.digits
+        chr += string.digits
     if include_symbols:
-        characters += string.punctuation
-
-    return ''.join(random.choice(characters) for _ in range(length))
-
-# Example usage
-password_length = 12
-password = generate_password(password_length)
-print("Generated Password:", password)
+        chr += string.punctuation
+    return ''.join(random.choice(chr) for _ in range(length))
+#dictionary 
+dic = {}
+password_length = 10
+a = gen_pas(password_length)
+dic[password_length] = a
+print(a)
+print(dic)
