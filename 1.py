@@ -6,7 +6,7 @@ def count_words(sentence):
     words = sentence.split()
     
     for word in words: 
-        word = word.strip('.,!?;:"\'').lower()
+        word = word.strip('').lower()
         word_counts[word] = word_counts.get(word, 0) + 1
     
     return word_counts
